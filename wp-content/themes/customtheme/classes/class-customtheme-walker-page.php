@@ -3,16 +3,16 @@
  * Custom page walker for this theme.
  *
  * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @subpackage Custom_Theme
+ * @since Custom Theme 1.0
  */
 
-if ( ! class_exists( 'TwentyTwenty_Walker_Page' ) ) {
+if ( ! class_exists( 'CustomTheme_Walker_Page' ) ) {
 	/**
 	 * CUSTOM PAGE WALKER
 	 * A custom walker for pages.
 	 */
-	class TwentyTwenty_Walker_Page extends Walker_Page {
+	class CustomTheme_Walker_Page extends Walker_Page {
 
 		/**
 		 * Outputs the beginning of the current element in the tree.
@@ -67,7 +67,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Page' ) ) {
 
 			if ( '' === $page->post_title ) {
 				/* translators: %d: ID of a post. */
-				$page->post_title = sprintf( __( '#%d (no title)', 'twentytwenty' ), $page->ID );
+				$page->post_title = sprintf( __( '#%d (no title)', 'customtheme' ), $page->ID );
 			}
 
 			$args['link_before'] = empty( $args['link_before'] ) ? '' : $args['link_before'];
@@ -98,15 +98,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Page' ) ) {
 				$args['list_item_after']  = '';
 
 				// Add a toggle to items with children.
-				if ( isset( $args['pages_with_children'][ $page->ID ] ) ) {
-
-					$toggle_target_string = '.menu-modal .page-item-' . $page->ID . ' > ul';
-					$toggle_duration      = twentytwenty_toggle_duration();
-
-					// Add the sub menu toggle.
-					$args['list_item_after'] .= '<button class="toggle sub-menu-toggle fill-children-current-color" data-toggle-target="' . $toggle_target_string . '" data-toggle-type="slidetoggle" data-toggle-duration="' . absint( $toggle_duration ) . '" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'twentytwenty' ) . '</span>' . twentytwenty_get_theme_svg( 'chevron-down' ) . '</button>';
-
-				}
+				
 
 				// Close the wrapper.
 				$args['list_item_after'] .= '</div><!-- .ancestor-wrapper -->';
