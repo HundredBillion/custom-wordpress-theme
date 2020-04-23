@@ -2,3 +2,56 @@
 Theme Name: Custom Theme
 Text Domain: customtheme
 */
+/*-------Utility --------*/
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+body{
+  font-family: sans-serif;
+}
+.container{
+  max-width: 1200px;
+  margin:0 auto;
+}
+
+/*------- Header ----------*/
+#site-header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background:#ddd;
+}
+.logo{
+  border-radius: 50%;
+}
+nav > ul{
+  display:flex;
+}
+nav ul li{
+  list-style-type: none;
+  padding:0 1rem;
+}
+nav ul li a{
+  text-decoration: none;
+}
+
+.sub-menu{
+  margin-top:1rem;
+  display:block;
+}
+.sub-menu li{
+  /* padding-top:.5rem;
+  padding-left:0; */
+}
+.sub-menu li:hover{
+  color:red;
+}
+/** Hamburger Icon **/
+input.menu-btn{
+  display:none;
+}
+@media (max-width:768px){
+
+}

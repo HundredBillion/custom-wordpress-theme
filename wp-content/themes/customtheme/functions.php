@@ -1,14 +1,11 @@
 <?php
-  /**
-   * Register styles.
-   */
+  /** Register styles **/
   function register_styles() {
     wp_enqueue_style( 'style', get_stylesheet_uri() );
   }
   add_action( 'wp_enqueue_scripts', 'register_styles' );
-  /**
-   * Register navigation menus uses wp_nav_menu in five places.
-   */
+  
+  /** Register navigation menus uses wp_nav_menu in five places **/
   function customtheme_menus() {
 
     $locations = array(
