@@ -17,41 +17,51 @@ body{
 }
 
 /*------- Header ----------*/
-#site-header{
+header#site-header{
   display:flex;
   justify-content: space-between;
-  align-items: center;
   background:#ddd;
 }
 .logo{
   border-radius: 50%;
 }
-nav > ul{
+nav{
+  display:flex;
+  align-items: center;
+}
+nav a {
+  display:block;
+}
+.primary-menu{
+  position: relative;
   display:flex;
 }
 nav ul li{
+  display:inline-block;
   list-style-type: none;
   padding:0 1rem;
 }
 nav ul li a{
   text-decoration: none;
 }
-
-.sub-menu{
+nav ul ul{
+  display:none;
+  position: absolute;
   margin-top:1rem;
-  display:block;
 }
-.sub-menu li{
-  /* padding-top:.5rem;
-  padding-left:0; */
+
+nav ul ul li{
+  display:list-item;
+  padding-top:.25rem;
+  padding-left:0;
 }
-.sub-menu li:hover{
-  color:red;
+
+nav ul li:hover>ul{
+  display: inherit;
 }
 /** Hamburger Icon **/
 input.menu-btn{
   display:none;
 }
 @media (max-width:768px){
-
 }
