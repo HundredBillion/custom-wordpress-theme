@@ -54,6 +54,9 @@ nav ul li:hover ul{
   display:flex;
   background-color:#333;
 }
+#drop:checked ~ nav{
+  display:block;
+}
 @media(max-width:768px){
   nav{
     display:none;
@@ -93,12 +96,19 @@ nav ul li:hover ul{
 .toggle:hover{
   background-color: #7083d8;
 }
-#drop:checked ~ nav{
-  display:block;
+#drop:checked ~ .header-logo-toggle .nav-icon{
+  background:transparent;
+}
+#drop:checked ~ .header-logo-toggle .nav-icon:before{
+  transform:rotate(-225deg);
+  top:0;
+}
+#drop:checked ~ .header-logo-toggle .nav-icon:after{
+  transform:rotate(225deg);
+  top:0;
 }
 #main-toggle{
   cursor:pointer;
-  /* float:right; */
   padding:28px 20px;
   position: relative;
   user-select:none;
@@ -109,6 +119,7 @@ nav ul li:hover ul{
   height:2px;
   width:18px;
   position: relative;
+  transition: background .2s ease-out;
 }
 .nav-icon:before,
 .nav-icon:after{
@@ -118,6 +129,7 @@ nav ul li:hover ul{
   height:100%;
   width:100%;
   position: absolute;
+  transition: all .2s ease-out;
 }
 .nav-icon:before{
   top:5px;

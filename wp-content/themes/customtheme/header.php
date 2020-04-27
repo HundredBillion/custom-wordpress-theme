@@ -20,6 +20,7 @@
 		?>
 
 		<header id="site-header" role="banner">
+			<input type="checkbox" id="drop">
 			<div class="header-logo-toggle">
 				<img src="https://picsum.photos/70" alt="" class="logo">
 				<?php
@@ -28,7 +29,8 @@
 				?>
 				<label for="drop" class="toggle" id='main-toggle'><span class="nav-icon"></span></label>
 			</div>
-			<input type="checkbox" id="drop">
+			
+			
 			<?php
 				if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
 			?>
