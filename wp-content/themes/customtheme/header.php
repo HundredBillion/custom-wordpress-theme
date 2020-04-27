@@ -20,21 +20,21 @@
 		?>
 
 		<header id="site-header" role="banner">
-			<div class="header-logo">
-				<img src="https://picsum.photos/90" alt="" class="logo">
+			<div class="header-logo-toggle">
+				<img src="https://picsum.photos/70" alt="" class="logo">
 				<?php
 					// Site title or logo.
 					//customtheme_site_logo();
 				?>
+				<label for="drop" class="toggle" id='main-toggle'><span class="nav-icon"></span></label>
 			</div>
+			<input type="checkbox" id="drop">
 			<?php
 				if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
 			?>
-				<nav aria-label="<?php esc_attr_e( 'Horizontal', 'customtheme' ); ?>" role="navigation">
-					<input id="menu-btn" class="menu-btn" type="checkbox">
-					<label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
 
-					<ul class="primary-menu">
+				<nav>
+					<ul>
 						<?php
 							if ( has_nav_menu( 'primary' ) ) {
 								wp_nav_menu(

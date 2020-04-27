@@ -18,52 +18,113 @@ body{
 
 /*------- Header ----------*/
 header#site-header{
+  display: flex;
+  flex-direction: column;
+  background-color:#333;
+}
+.header-logo-toggle{
   display:flex;
   justify-content: space-between;
-  background:#ddd;
+  align-items: center;
 }
 .logo{
   border-radius: 50%;
 }
-nav{
-  display:flex;
-  align-items: center;
-}
-nav a {
-  display:block;
-}
-.primary-menu{
-  position: relative;
-  display:flex;
-}
+
 nav ul li{
-  display:inline-block;
   list-style-type: none;
-  padding:0 1rem;
+  padding-right:1rem;
 }
 nav ul li a{
   text-decoration: none;
+  padding:.8rem 1rem;
+  display:block;
+  color:#f9f9f9;
 }
-nav ul ul{
+nav ul li:hover{
+  background:rgba(0,0,0,.25);
+  padding-right:1rem;
+}
+.menu-item-has-children ul{
   display:none;
-  position: absolute;
-  margin-top:1rem;
+  flex-direction: column;
+  width:100%;
 }
-
-nav ul ul li{
-  display:list-item;
-  padding-top:.25rem;
-  padding-left:0;
+nav ul li:hover ul{
+  display:flex;
+  background-color:#333;
 }
+@media(max-width:768px){
+  nav{
+    display:none;
+  }
+  .menu-item-has-children ul li a{
+    padding:2rem;
+  }
 
-nav ul li:hover>ul{
-  display: inherit;
+}
+/*-----Desktop Nav----*/
+@media (min-width:769px){
+  header#site-header{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav ul{
+    display:flex;
+    justify-content: space-between;
+  } 
+  nav ul li{
+    position: relative;
+    flex:1 0 auto;
+  }
+  nav ul li:hover ul{
+    position: absolute;
+  }
+  .toggle{
+    display:none;
+  }
 }
 /** Hamburger Icon **/
-input.menu-btn{
+
+#drop{
   display:none;
 }
-@media (max-width:768px){
+.toggle:hover{
+  background-color: #7083d8;
+}
+#drop:checked ~ nav{
+  display:block;
+}
+#main-toggle{
+  cursor:pointer;
+  /* float:right; */
+  padding:28px 20px;
+  position: relative;
+  user-select:none;
+}
+.nav-icon{
+  background:#fff;
+  display:block;
+  height:2px;
+  width:18px;
+  position: relative;
+}
+.nav-icon:before,
+.nav-icon:after{
+  content:'';
+  background:#fff;
+  display:block;
+  height:100%;
+  width:100%;
+  position: absolute;
+}
+.nav-icon:before{
+  top:5px;
+}
+.nav-icon:after{
+  top:-5px;
 }
 
-/*---------------------*/
+
+
